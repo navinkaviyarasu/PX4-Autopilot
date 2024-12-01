@@ -74,6 +74,7 @@ publications:
   - topic: /fmu/out/vehicle_trajectory_waypoint_desired
     type: px4_msgs::msg::VehicleTrajectoryWaypoint
 
+
 # Create uORB::Publication
 subscriptions:
   - topic: /fmu/in/register_ext_component_request
@@ -159,6 +160,9 @@ subscriptions:
 
   - topic: /fmu/in/aux_global_position
     type: px4_msgs::msg::VehicleGlobalPosition
+
+  - topic: /fmu/in/vio_state
+    type: px4_msgs::msg::VioState
 
 # Create uORB::PublicationMulti
 subscriptions_multi:
