@@ -45,10 +45,8 @@ set(msg_files
 	ActuatorTest.msg
 	AdcReport.msg
 	Airspeed.msg
-	AirspeedValidated.msg
 	AirspeedWind.msg
 	AutotuneAttitudeControlStatus.msg
-	Buffer128.msg
 	ButtonEvent.msg
 	CameraCapture.msg
 	CameraStatus.msg
@@ -114,6 +112,7 @@ set(msg_files
 	HeaterStatus.msg
 	HoverThrustEstimate.msg
 	InputRc.msg
+	InternalCombustionEngineControl.msg
 	InternalCombustionEngineStatus.msg
 	IridiumsbdStatus.msg
 	IrlockReport.msg
@@ -163,6 +162,7 @@ set(msg_files
 	PowerButtonState.msg
 	PowerMonitor.msg
 	PpsCapture.msg
+	PurePursuitStatus.msg
 	PwmInput.msg
 	Px4ioStatus.msg
 	QshellReq.msg
@@ -171,15 +171,15 @@ set(msg_files
 	RateCtrlStatus.msg
 	RcChannels.msg
 	RcParameterMap.msg
-	RoverAckermannGuidanceStatus.msg
-	RoverAckermannSetpoint.msg
-	RoverAckermannStatus.msg
-	RoverDifferentialGuidanceStatus.msg
-	RoverDifferentialSetpoint.msg
-	RoverDifferentialStatus.msg
-	RoverMecanumGuidanceStatus.msg
-	RoverMecanumSetpoint.msg
-	RoverMecanumStatus.msg
+	RoverAttitudeSetpoint.msg
+	RoverAttitudeStatus.msg
+	RoverPositionSetpoint.msg
+	RoverRateSetpoint.msg
+	RoverRateStatus.msg
+	RoverSteeringSetpoint.msg
+	RoverThrottleSetpoint.msg
+	RoverVelocitySetpoint.msg
+	RoverVelocityStatus.msg
 	Rpm.msg
 	RtlStatus.msg
 	RtlTimeEstimate.msg
@@ -210,8 +210,7 @@ set(msg_files
 	TelemetryStatus.msg
 	TiltrotorExtraControls.msg
 	TimesyncStatus.msg
-	TrajectoryBezier.msg
-	TrajectoryWaypoint.msg
+	TrajectorySetpoint6dof.msg
 	TransponderReport.msg
 	TuneControl.msg
 	UavcanParameterRequest.msg
@@ -231,8 +230,6 @@ set(msg_files
 	VehicleRoi.msg
 	VehicleThrustSetpoint.msg
 	VehicleTorqueSetpoint.msg
-	VehicleTrajectoryBezier.msg
-	VehicleTrajectoryWaypoint.msg
 	VelocityLimits.msg
 	WheelEncoders.msg
 	Wind.msg
@@ -240,6 +237,7 @@ set(msg_files
 	VioState.msg
 	versioned/ActuatorMotors.msg
 	versioned/ActuatorServos.msg
+	versioned/AirspeedValidated.msg
 	versioned/ArmingCheckReply.msg
 	versioned/ArmingCheckRequest.msg
 	versioned/BatteryStatus.msg
