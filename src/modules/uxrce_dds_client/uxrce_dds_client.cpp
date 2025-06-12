@@ -972,7 +972,17 @@ UxrceddsClient *UxrceddsClient::instantiate(int argc, char *argv[])
 	const char *device = nullptr;
 	int baudrate = 921600;
 
-	const char *client_namespace = nullptr;//"px4";
+	// const char *client_namespace = nullptr;//"px4";
+
+	// Used to provide custom namespace for the DDS topic
+	// namespace is of the format aira+MAV_SYS_ID, where the keyword aira is explicitly given
+	int32_t dds_namesapace_id;
+	param_get(param_find("MAV_SYS_ID"), &dds_namesapace_id);
+	// param_get(param_mav_sys_id, &dds_namesapace_id);
+
+	static char client_namespace_buffer[20];
+	snprintf(client_namespace_buffer, sizeof(client_namespace_buffer), "aira%" PRId32, dds_namesapace_id);
+	const char *client_namespace = client_namespace_buffer;
 
 	while ((ch = px4_getopt(argc, argv, "t:d:b:h:p:n:", &myoptind, &myoptarg)) != EOF) {
 		switch (ch) {
