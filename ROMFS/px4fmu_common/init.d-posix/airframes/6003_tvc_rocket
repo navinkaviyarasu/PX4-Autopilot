@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# @name Inverted Coaxial Servo Drone
+#
+# @type Coaxial
+#
+# @class Copter
+#
+# @maintainer Your Name <your.email@example.com>
+#
+# @board px4_fmu-v2 exclude
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+param set-default MAV_TYPE 3 # Rocket
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=tvc}
+
+param set-default SIM_GZ_EN 1
+
+param set-default SENS_EN_GPSSIM 1
+param set-default SENS_EN_BAROSIM 0
+param set-default SENS_EN_MAGSIM 1
+
+# param set-default CA_SP0_ANG1 90.0000
+# param set-default CA_SP0_COUNT 2
+# param set-default COM_DISARM_LAND 0.0000
+# param set-default COM_DISARM_PRFLT 0.0000
+# param set-default FD_ESCS_EN 0
+# param set-default FD_FAIL_R 180
+# param set-default MC_AIRMODE 1
+# param set-default MC_PITCHRATE_D 0.0086
+# param set-default MC_PITCHRATE_I 0.2250
+# param set-default MC_PITCHRATE_K 1.3000
+# param set-default MC_PITCHRATE_MAX 20.0000
+# param set-default MC_PITCHRATE_P 0.2759
+# param set-default MC_PITCH_P 2.5000
+# param set-default MC_ROLLRATE_D 0.0088
+# param set-default MC_ROLLRATE_K 1.9000
+# param set-default MC_ROLLRATE_MAX 20.0000
+# param set-default MC_ROLLRATE_P 0.2653
+# param set-default MC_ROLL_P 3.5000
+# param set-default MC_YAWRATE_D 0.0002
+# param set-default MC_YAWRATE_I 0.1400
+# param set-default MC_YAWRATE_K 1.1000
+# param set-default MC_YAWRATE_MAX 20.0000
+# param set-default MC_YAWRATE_P 0.0547
+# param set-default MC_YAW_P 6.5000
+# param set-default MPC_MAN_TILT_MAX 10.0000
+# param set-default MPC_XY_P 0.9000
+# param set-default MPC_XY_VEL_D_ACC 0.1500
+# param set-default MPC_XY_VEL_I_ACC 1.6000
+# param set-default MPC_XY_VEL_P_ACC 3.8500
+# param set-default SIM_GZ_EC_FUNC1 102
+# param set-default SIM_GZ_EC_FUNC2 101
+# param set-default SIM_GZ_SV_FUNC1 201
+# param set-default SIM_GZ_SV_FUNC2 202
+
+param set-default CA_SP0_ANG1 90.0000
+param set-default CA_SP0_COUNT 2
+param set-default COM_DISARM_LAND 0.0000
+param set-default COM_DISARM_PRFLT 0.0000
+param set-default FD_ESCS_EN 0
+param set-default FD_FAIL_R 180
+param set-default MC_AIRMODE 1
+param set-default MC_PITCHRATE_D 0.0086
+param set-default MC_PITCHRATE_I 0.2250
+param set-default MC_PITCHRATE_K 1.3000
+param set-default MC_PITCHRATE_MAX 20.0000
+param set-default MC_PITCHRATE_P 0.2759
+param set-default MC_PITCH_P 2.5000
+param set-default MC_ROLLRATE_D 0.0088
+param set-default MC_ROLLRATE_K 1.9000
+param set-default MC_ROLLRATE_MAX 20.0000
+param set-default MC_ROLLRATE_P 0.2653
+param set-default MC_ROLL_P 3.5000
+param set-default MC_YAWRATE_D 0.0002
+param set-default MC_YAWRATE_I 0.0400
+param set-default MC_YAWRATE_K 0.3000
+param set-default MC_YAWRATE_MAX 20.0000
+param set-default MC_YAWRATE_P 0.0547
+param set-default MC_YAW_P 2.0000
+param set-default MPC_MAN_TILT_MAX 10.0000
+param set-default MPC_XY_P 0.9000
+param set-default MPC_XY_VEL_D_ACC 0.1500
+param set-default MPC_XY_VEL_I_ACC 1.6000
+param set-default MPC_XY_VEL_P_ACC 3.8500
+param set-default SIM_GZ_EC_FUNC1 102
+param set-default SIM_GZ_EC_FUNC2 101
+param set-default SIM_GZ_SV_FUNC1 201
+param set-default SIM_GZ_SV_FUNC2 202
+param set-default UXRCE_DDS_DOM_ID 1
+
+
+# Configure as bicopter with servo tilt
+param set-default CA_AIRFRAME 12 # Specify custom airframe
+
+# To avoid disarm in the air
+param set COM_DISARM_LAND 0.0
