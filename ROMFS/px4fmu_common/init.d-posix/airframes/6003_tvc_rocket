@@ -17,7 +17,7 @@ param set-default MAV_TYPE 3 # Rocket
 
 PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
 PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
-PX4_SIM_MODEL=${PX4_SIM_MODEL:=tvc}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=viper}
 
 param set-default SIM_GZ_EN 1
 
